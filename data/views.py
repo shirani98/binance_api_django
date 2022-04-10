@@ -1,9 +1,7 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import render
 from django.views.generic import View
-from decimal import Decimal
-from binance.client import Client
 from data.forms import DataForm
-from data.models import Data, Result
+from data.models import Data
 
 
 class DataView(View):
@@ -18,5 +16,5 @@ class DataView(View):
 class ResultView(View):
 
     def get(self, request, *args, **kwargs):
-        Result.get_result(self.kwargs['uuid'])
-        return render(self.request, 'data/result.html', {'Result': Result.objects.filter(data__uuid=self.kwargs['uuid'])})
+        Data.get_result(self.kwargs['uuid'])
+        return render(self.request, 'data/result.html')

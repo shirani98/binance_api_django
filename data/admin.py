@@ -1,13 +1,11 @@
 from django.contrib import admin
 
-from data.models import Data, Result
+from data.models import Data, ArchiveData
 
 # Register your models here.
-class ResultInLine(admin.TabularInline):
-    model = Result
-    extra = 1
+
     
 class DataAdmin(admin.ModelAdmin):
     model = Data
-    inlines = (ResultInLine,)
 admin.site.register(Data,DataAdmin)
+admin.site.register(ArchiveData)

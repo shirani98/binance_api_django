@@ -1,33 +1,6 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
 
 {% block content %}
 
-<div class="row justify-content-center">
-<table class="table table-dark col-md-4 center">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">status</th>
-        <th scope="col">timestamp</th>
-        <th scope="col">target price</th>
-        <th scope="col">close price</th>
-        <th scope="col">symbol</th>
-      </tr>
-    </thead>
-    <tbody>
-        
-      {% for item in Result %}
-      <tr>
-        <th scope="row">{{forloop.counter}}</th>
-        <td>{{item.status}}</td>
-        <td>{{item.timestamp}}</td>
-        <td>{{item.data.price}}</td>
-        <td>{{item.close_price}}</td>
-        <td>{{item.data.symbol}}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-  </div>
+<p>Thanks for your submit</p>
 {% endblock %}
